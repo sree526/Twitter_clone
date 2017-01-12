@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<% include homeheader %>
+<meta charset="UTF-8">
+<title>HomePage</title>
+	.bs-example{
+    	margin: 20px;
+    }
+    hr{
+        margin: 60px 0;
+    }
+</style>
+</head>
+<body ng-app="routerApp">
+<div class="bs-example">
+<header>
+    <ul class="nav nav-pills">
+        <li class="active"><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="profile">Profile</a></li>
+        <li class="dropdown">
+            <a ui-sref='messages' data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a ui-sref='inbox'>Inbox</a></li>
+            </ul>
+        </li>
+        <li class="dropdown pull-right">
+            <a ui-sref='username' data-toggle="dropdown" class="dropdown-toggle"><%=username %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li><a href='settings'>Settings</a></li>
+                <li><input type="submit" value="Logout"></li>
+            </ul>
+        </li>
+    </ul>    
+</div>
+ </header>                             					
+				<h4>Welcome to the Portal, <%= username %></h4>
+ <div class="col-sm-6">
+        <div ui-view="columnOne"></div>
+    </div>
+
+    <div class="col-sm-6">
+        <div ui-view="columnTwo"></div>
+    </div>
+</body>
+</html>
